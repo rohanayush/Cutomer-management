@@ -1,27 +1,39 @@
-<div *ngIf="customer" style="margin-top:100px">
-    <h2>Edit Customer Details</h2>
+<div class="form-container">
+  @if (customer) {
+  <div style="margin-top: 100px">
+    <h4 class="center">Edit Customer Details</h4>
     <form>
-        <label>
-            Id:
-            <input type="text" [(ngModel)]="customer.id" name="id" />
-          </label>
+      <label>
+        Id:
+        <input type="text" [(ngModel)]="customer.id" name="id" />
+      </label>
       <label>
         Name:
-        <input type="text" [(ngModel)]="customer.name" name="name" />
+        <input type="text" [(ngModel)]="customer.name" name="name" required />
       </label>
       <label>
         Products:
-        <input type="text" [(ngModel)]="customer.products" name="products" />
+        <input type="text" [(ngModel)]="productString" name="products" required />
       </label>
       <label>
         Purchase Date:
-        <input type="date" [(ngModel)]="customer.purchaseDate" name="purchaseDate" />
+        <input
+          type="date"
+          [(ngModel)]="customer.purchaseDate"
+          name="purchaseDate" required
+        />
       </label>
       <label>
         Purchase Amount:
-        <input type="number" [(ngModel)]="customer.purchaseAmount" name="purchaseAmount" />
+        <input
+          type="number"
+          [(ngModel)]="customer.purchaseAmount"
+          name="purchaseAmount" required
+        />
       </label>
-      <button (click)="updateCustomer()">Update</button> <!-- Button to update -->
+      <button (click)="updateCustomer()">Update</button>
+      <!-- Button to update -->
     </form>
   </div>
-  
+  }
+</div>

@@ -1,6 +1,6 @@
 <div class="first">
   <div class="customer-row">
-    <li>ID</li>
+    <li>Serial</li>
     <li>Name</li>
     <li>Products</li>
     <li>Purchase Date</li>
@@ -16,16 +16,14 @@
   <div class="customer-row">
     <li>{{ $index + 1 }}</li>
     <li>{{ customer.name }}</li>
-    <li>{{ customer.products.join(",") }}</li>
+    <li class="products">{{ customer.products.join(",") }}</li>
     <li>{{ customer.purchaseDate }}</li>
     <li>{{ customer.purchaseAmount }}</li>
     <li>
       <button (click)="editCustomer(customer)">✏️</button>
-      <!-- Edit icon -->
     </li>
     <li>
       <button (click)="deleteCustomer(customer.id)">🗑️</button>
-      <!-- Delete icon -->
     </li>
   </div>
   }

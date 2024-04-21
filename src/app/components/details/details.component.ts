@@ -25,8 +25,9 @@ import { Router, RouterModule } from '@angular/router';
 export class DetailsComponent implements OnInit, OnChanges {
   @Input() id = '';
   customer: Customer | undefined;
+  productString:string="";
 
-  constructor(private customService: CustomService,private route:Router) {}
+  constructor(private customService: CustomService, private route: Router) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
@@ -36,17 +37,23 @@ export class DetailsComponent implements OnInit, OnChanges {
     console.log('id in ngOnInit', this.id);
     this.getCustomerById(Number(this.id));
   }
+
   getCustomerById(id: number) {
     const allData = this.customService.customerData$;
     allData.subscribe((data: Customer[]) => {
       this.customer = data.find((a: { id: number }) => a.id === id);
+      if(this.customer)
+      this.productString = this.customer.products.join(",");
     });
   }
 
   updateCustomer() {
-    if (this.customer) this.customService.updateCustomer(this.customer);
-    setTimeout(() => {
-      this.route.navigate(['/']); // Navigate to the root page after a delay
-    }, 500);
+    if (this.customer) {
+      // this.customer.products = this.customer.products
+      this.customer.products = this.productString.split(",").map((product) => product.trim());
+      console.log("after changing values",this.customer);
+      this.customService.updateCustomer(this.customer);
+      this.route.navigate(['/']);
+    }
   }
 }
