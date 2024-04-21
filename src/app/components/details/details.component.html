@@ -2,18 +2,21 @@
   @if (customer) {
   <div style="margin-top: 100px">
     <h4 class="center">Edit Customer Details</h4>
-    <form>
+    <form #customerForm="ngForm">
       <label>
         Id:
-        <input type="text" [(ngModel)]="customer.id" name="id" />
+        <input type="text" [(ngModel)]="customer.id" name="id" minlength="1" />
       </label>
       <label>
         Name:
-        <input type="text" [(ngModel)]="customer.name" name="name" required />
+        <input type="text" [(ngModel)]="customer.name" name="name" minlength="2"  required />
+        <div *ngIf="customerForm.submitted && !customerForm.controls['name']?.valid">
+          Name must be at least 2 characters long.
+        </div>
       </label>
       <label>
         Products:
-        <input type="text" [(ngModel)]="productString" name="products" required />
+        <input type="text" [(ngModel)]="productString" name="products" minlength="2"  required />
       </label>
       <label>
         Purchase Date:
@@ -31,8 +34,7 @@
           name="purchaseAmount" required
         />
       </label>
-      <button (click)="updateCustomer()">Update</button>
-      <!-- Button to update -->
+      <button [disabled]="!customerForm.valid" [ngClass]="customerForm.valid ? 'success' : 'invalid'" (click)="updateCustomer()">Update</button>
     </form>
   </div>
   }
