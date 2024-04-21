@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Customer } from '../../state/appState';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -17,12 +18,12 @@ export class ListComponent implements OnInit {
 
   customerData$:Observable<Customer[]> | undefined;
 
-  constructor(private customerService:CustomService){
+  constructor(private customerService:CustomService,private router: Router ){
   
   }
 
   ngOnInit(){
-   this.customerData$ = this.customerService.getCustomers();
+   this.customerData$ = this.customerService.customerData$;
   }
 
   deleteCustomer(customer:Customer){
@@ -30,6 +31,7 @@ export class ListComponent implements OnInit {
   }
 
   editCustomer(customer:Customer){
-
+    this.router.navigate(['/details', customer.id]);
   }
+
 }

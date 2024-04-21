@@ -16,7 +16,7 @@
   <div class="customer-row">
     <li>{{ $index + 1 }}</li>
     <li>{{ customer.name }}</li>
-    <li>{{ customer.product }}</li>
+    <li>{{ customer.products.join(",") }}</li>
     <li>{{ customer.purchaseDate }}</li>
     <li>{{ customer.purchaseAmount }}</li>
     <li>

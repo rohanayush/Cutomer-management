@@ -7,7 +7,7 @@ export interface actionStruc{
 export interface Customer {
     id: number;
     name: string;
-    product: string;
+    products: string[];
     purchaseDate: string; // Storing dates as strings
     purchaseAmount: number;
     actions:actionStruc;

@@ -2,9 +2,9 @@
     {
         "id": 1,
         "name": "John Doe",
-        "product": "Laptop",
+        "products": ["Laptop","Mobile"],
         "purchaseDate": "2023-09-15",
-        "purchaseAmount": 1500.00,
+        "purchaseAmount": 2500.00,
         "actions": {
             "edit": true,
             "delete": true
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "name": "Jane Smith",
-        "product": "Smartphone",
+        "products": ["Smartphone"],
         "purchaseDate": "2023-08-30",
         "purchaseAmount": 800.00,
         "actions": {
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "name": "Alice Johnson",
-        "product": "Tablet",
+        "products": ["Tablet"],
         "purchaseDate": "2023-07-21",
         "purchaseAmount": 600.00,
         "actions": {
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "name": "Bob Brown",
-        "product": "Smartwatch",
+        "products": ["Smartwatch"],
         "purchaseDate": "2023-06-15",
         "purchaseAmount": 200.00,
         "actions": {
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "name": "Carol White",
-        "product": "Headphones",
+        "products": ["Headphones"],
         "purchaseDate": "2023-05-12",
         "purchaseAmount": 150.00,
         "actions": {
@@ -55,54 +55,32 @@
         }
     },
     {
-        "id": 1,
-        "name": "John Doe",
-        "product": "Laptop",
-        "purchaseDate": "2023-09-15",
-        "purchaseAmount": 1500.00,
+        "id": 6,
+        "name": "David Green",
+        "products": ["Monitor"],
+        "purchaseDate": "2023-04-10",
+        "purchaseAmount": 250.00,
         "actions": {
             "edit": true,
             "delete": true
         }
     },
     {
-        "id": 2,
-        "name": "Jane Smith",
-        "product": "Smartphone",
-        "purchaseDate": "2023-08-30",
-        "purchaseAmount": 800.00,
+        "id": 7,
+        "name": "Emma Blue",
+        "products": ["Keyboard", "Mouse"],
+        "purchaseDate": "2023-03-05",
+        "purchaseAmount": 100.00,
         "actions": {
             "edit": true,
             "delete": true
         }
     },
     {
-        "id": 3,
-        "name": "Alice Johnson",
-        "product": "Tablet",
-        "purchaseDate": "2023-07-21",
-        "purchaseAmount": 600.00,
-        "actions": {
-            "edit": true,
-            "delete": true
-        }
-    },
-    {
-        "id": 4,
-        "name": "Bob Brown",
-        "product": "Smartwatch",
-        "purchaseDate": "2023-06-15",
-        "purchaseAmount": 200.00,
-        "actions": {
-            "edit": true,
-            "delete": true
-        }
-    },
-    {
-        "id": 5,
-        "name": "Carol White",
-        "product": "Headphones",
-        "purchaseDate": "2023-05-12",
+        "id": 8,
+        "name": "Frank Black",
+        "products": ["Router"],
+        "purchaseDate": "2023-02-14",
         "purchaseAmount": 150.00,
         "actions": {
             "edit": true,
@@ -110,55 +88,22 @@
         }
     },
     {
-        "id": 1,
-        "name": "John Doe",
-        "product": "Laptop",
-        "purchaseDate": "2023-09-15",
-        "purchaseAmount": 1500.00,
+        "id": 9,
+        "name": "Grace White",
+        "products": ["External Hard Drive"],
+        "purchaseDate": "2023-01-28",
+        "purchaseAmount": 120.00,
         "actions": {
             "edit": true,
             "delete": true
         }
     },
     {
-        "id": 2,
-        "name": "Jane Smith",
-        "product": "Smartphone",
-        "purchaseDate": "2023-08-30",
-        "purchaseAmount": 800.00,
-        "actions": {
-            "edit": true,
-            "delete": true
-        }
-    },
-    {
-        "id": 3,
-        "name": "Alice Johnson",
-        "product": "Tablet",
-        "purchaseDate": "2023-07-21",
-        "purchaseAmount": 600.00,
-        "actions": {
-            "edit": true,
-            "delete": true
-        }
-    },
-    {
-        "id": 4,
-        "name": "Bob Brown",
-        "product": "Smartwatch",
-        "purchaseDate": "2023-06-15",
-        "purchaseAmount": 200.00,
-        "actions": {
-            "edit": true,
-            "delete": true
-        }
-    },
-    {
-        "id": 5,
-        "name": "Carol White",
-        "product": "Headphones",
-        "purchaseDate": "2023-05-12",
-        "purchaseAmount": 150.00,
+        "id": 10,
+        "name": "Hannah Gold",
+        "products": ["Webcam"],
+        "purchaseDate": "2022-12-05",
+        "purchaseAmount": 80.00,
         "actions": {
             "edit": true,
             "delete": true

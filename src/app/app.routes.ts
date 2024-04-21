@@ -5,6 +5,6 @@ export const routes: Routes = [
         path:'',loadComponent: () => import('./components/list/list.component').then(comp => comp.ListComponent)
     },
     {
-        path:':id',loadComponent: () => import('./components/details/details.component').then(comp => comp.DetailsComponent)
+        path:'details/:id',loadComponent: () => import('./components/details/details.component').then(comp => comp.DetailsComponent)
     }
 ];
