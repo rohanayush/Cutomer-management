@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "product": "Laptop",
+        "purchaseDate": "2023-09-15",
+        "purchaseAmount": 1500.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "product": "Smartphone",
+        "purchaseDate": "2023-08-30",
+        "purchaseAmount": 800.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 3,
+        "name": "Alice Johnson",
+        "product": "Tablet",
+        "purchaseDate": "2023-07-21",
+        "purchaseAmount": 600.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 4,
+        "name": "Bob Brown",
+        "product": "Smartwatch",
+        "purchaseDate": "2023-06-15",
+        "purchaseAmount": 200.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 5,
+        "name": "Carol White",
+        "product": "Headphones",
+        "purchaseDate": "2023-05-12",
+        "purchaseAmount": 150.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 1,
+        "name": "John Doe",
+        "product": "Laptop",
+        "purchaseDate": "2023-09-15",
+        "purchaseAmount": 1500.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "product": "Smartphone",
+        "purchaseDate": "2023-08-30",
+        "purchaseAmount": 800.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 3,
+        "name": "Alice Johnson",
+        "product": "Tablet",
+        "purchaseDate": "2023-07-21",
+        "purchaseAmount": 600.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 4,
+        "name": "Bob Brown",
+        "product": "Smartwatch",
+        "purchaseDate": "2023-06-15",
+        "purchaseAmount": 200.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 5,
+        "name": "Carol White",
+        "product": "Headphones",
+        "purchaseDate": "2023-05-12",
+        "purchaseAmount": 150.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 1,
+        "name": "John Doe",
+        "product": "Laptop",
+        "purchaseDate": "2023-09-15",
+        "purchaseAmount": 1500.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "product": "Smartphone",
+        "purchaseDate": "2023-08-30",
+        "purchaseAmount": 800.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 3,
+        "name": "Alice Johnson",
+        "product": "Tablet",
+        "purchaseDate": "2023-07-21",
+        "purchaseAmount": 600.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 4,
+        "name": "Bob Brown",
+        "product": "Smartwatch",
+        "purchaseDate": "2023-06-15",
+        "purchaseAmount": 200.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": 5,
+        "name": "Carol White",
+        "product": "Headphones",
+        "purchaseDate": "2023-05-12",
+        "purchaseAmount": 150.00,
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    }
+]

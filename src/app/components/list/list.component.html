@@ -1,0 +1,32 @@
+<div class="first">
+  <div class="customer-row">
+    <li>ID</li>
+    <li>Name</li>
+    <li>Products</li>
+    <li>Purchase Date</li>
+    <li>Purchase Amount</li>
+    <li>Actions</li>
+    <li></li>
+  </div>
+</div>
+
+
+<div class="container">
+  @for (customer of customerData$ | async; track $index) {
+  <div class="customer-row">
+    <li>{{ $index + 1 }}</li>
+    <li>{{ customer.name }}</li>
+    <li>{{ customer.product }}</li>
+    <li>{{ customer.purchaseDate }}</li>
+    <li>{{ customer.purchaseAmount }}</li>
+    <li>
+      <button (click)="editCustomer(customer)">✏️</button>
+      <!-- Edit icon -->
+    </li>
+    <li>
+      <button (click)="deleteCustomer(customer)">🗑️</button>
+      <!-- Delete icon -->
+    </li>
+  </div>
+  }
+</div>
