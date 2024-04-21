@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CustomService } from './service/custom.service';
 
@@ -9,6 +9,11 @@ import { CustomService } from './service/custom.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'E-Shop Management';
+  ngOnInit(){
+    localStorage.clear();
+  }
+
+  
 }

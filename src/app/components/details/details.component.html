@@ -1,13 +1,27 @@
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<p>details works!</p>
-<h1>{{id}}</h1>
+<div *ngIf="customer" style="margin-top:100px">
+    <h2>Edit Customer Details</h2>
+    <form>
+        <label>
+            Id:
+            <input type="text" [(ngModel)]="customer.id" name="id" />
+          </label>
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="customer.name" name="name" />
+      </label>
+      <label>
+        Products:
+        <input type="text" [(ngModel)]="customer.products" name="products" />
+      </label>
+      <label>
+        Purchase Date:
+        <input type="date" [(ngModel)]="customer.purchaseDate" name="purchaseDate" />
+      </label>
+      <label>
+        Purchase Amount:
+        <input type="number" [(ngModel)]="customer.purchaseAmount" name="purchaseAmount" />
+      </label>
+      <button (click)="updateCustomer()">Update</button> <!-- Button to update -->
+    </form>
+  </div>
+  

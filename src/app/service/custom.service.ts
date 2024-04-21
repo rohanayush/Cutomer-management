@@ -1,43 +1,68 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
-import { Customer } from '../state/appState';
+    import { HttpClient } from '@angular/common/http';
+    import { Injectable, OnInit } from '@angular/core';
+    import {
+      BehaviorSubject,
+      Observable,
+      filter,
+      find,
+      first,
+      map,
+      of,
+      throwError,
+    } from 'rxjs';
+    import { Customer } from '../state/appState';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class CustomService {
-  private apiUrl = 'assets/api.json'; // Path to your JSON file
-  private customerDataSubject = new BehaviorSubject<Customer[]>([]); // Holds latest data
-  customerData$ = this.customerDataSubject.asObservable(); // Observable for components to subscribe to
+    @Injectable({
+      providedIn: 'root',
+    })
+    export class CustomService {
+      private apiUrl = 'assets/api.json'; 
+      customerDataSubject = new BehaviorSubject<Customer[]>([]);
+      customerData$ = this.customerDataSubject.asObservable(); 
+      flag = localStorage.getItem("flag");
 
-  constructor(private http: HttpClient) {
-    this.fetchCustomers(); // Fetch initial data
-  }
+      constructor(private http: HttpClient) {
+        const storedData = localStorage.getItem('customerData');
+        if (storedData) {
+          const data = JSON.parse(storedData);
+          this.customerDataSubject.next(data);
+        } else {
+          this.fetchCustomers();
+        }
+      }
+      
 
-  fetchCustomers(): void {
-    this.http.get<Customer[]>(this.apiUrl).subscribe(data => {
-      this.customerDataSubject.next(data); // Update with new data
-    });
-  }
-  updateCustomer(updatedCustomer: Customer): void {
-    const currentData = this.customerDataSubject.getValue();
-    const index = currentData.findIndex((c) => c.id === updatedCustomer.id);
+      fetchCustomers(): void {
 
-    if (index !== -1) {
-      currentData[index] = updatedCustomer; // Update customer in the array
-      this.customerDataSubject.next([...currentData]); // Emit the updated array
+          this.http.get<Customer[]>(this.apiUrl).subscribe((data) => {
+            this.customerDataSubject.next(data); 
+          });
+      }
+
+      updateCustomer(updatedCustomer: Customer): void {
+        console.log("customer received", updatedCustomer);
+        
+        const currentData = this.customerDataSubject.getValue(); 
+        const index = currentData.findIndex((c) => c.id === updatedCustomer.id); 
+        
+        console.log('Current data before update:', currentData);
+      
+        if (index !== -1) {
+          currentData[index] = updatedCustomer;
+          this.customerDataSubject.next([...currentData]);
+          console.log('Current data after update:', currentData); 
+          localStorage.setItem('customerData', JSON.stringify(currentData));
+        } else {
+          console.error('Customer not found:', updatedCustomer.id); 
+        }
+      }
+
+      deleteCustomer(customerId: number): void {
+        const currentData = this.customerDataSubject.getValue();
+        const newData = currentData.filter((customer) => customer.id !== customerId); // Remove the customer
+        this.customerDataSubject.next(newData); // Update the observable
+        localStorage.setItem("customerData", JSON.stringify(newData));
+      }
+      
+
     }
-  }
-
-  getCustomerById(id: number): Observable<Customer> {
-    const customer = this.customerDataSubject.getValue().find((c) => c.id === id);
-
-    if (customer) {
-      return of(customer); // Return the found customer
-    } else {
-      // Return an error or navigate to an error page
-      return of(("Customer with ID  not found") as unknown) as Observable<Customer>;
-    }
-  }
-}

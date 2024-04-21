@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CustomService } from '../../service/custom.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -14,24 +14,37 @@ import { Router } from '@angular/router';
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
 
   customerData$:Observable<Customer[]> | undefined;
 
   constructor(private customerService:CustomService,private router: Router ){
-  
+   
   }
 
   ngOnInit(){
-   this.customerData$ = this.customerService.customerData$;
+    this.customerData$ = this.customerService.customerData$;
+   if(this.customerData$){
+    this.customerData$.subscribe(
+      (data:Customer[])=>{
+        console.log("Data if changed", data)
+      }
+     )
+   }
+   
   }
 
-  deleteCustomer(customer:Customer){
-
+  deleteCustomer(id:number){
+      this.customerService.deleteCustomer(id);
   }
 
   editCustomer(customer:Customer){
     this.router.navigate(['/details', customer.id]);
   }
+
+  ngOnDestroy(): void {
+      
+  }
+  
 
 }
