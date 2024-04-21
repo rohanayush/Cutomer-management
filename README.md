@@ -1,6 +1,11 @@
 # EshopApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+## Initial steps
+1. Required installation of node version greater than 18.
+2. Run `git clone https://github.com/rohanayush/Cutomer-management.git` in terminal , within yor desired folder.
+3. `cd folder`
+4.  `npm install`
 
 ## Development server
 
